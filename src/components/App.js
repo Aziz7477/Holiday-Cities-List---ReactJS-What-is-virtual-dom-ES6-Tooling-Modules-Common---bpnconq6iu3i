@@ -37,21 +37,22 @@ class App extends Component {
     ];
   }
 
-  render() {
-    const orderedCityList = this.cityList.sort((a, b) => (a.name > b.name) ? 1 : -1);
+ render() {
+  const orderedCityList = this.cityList.sort((a, b) => (a.name > b.name) ? 1 : -1);
 
-    return (
-      <div id="main">
-        <ol>
-          {orderedCityList.map((city, index) => (
-            <li key={`location${index}`}>
-              {`${city.name}, ${city.country}`}
-            </li>
-          ))}
-        </ol>
-      </div>
-    )
-  }
+  return (
+    <div id="main">
+      <ol type="1">
+        {orderedCityList.map((city, index) => (
+          <li key={`location${index}`}>
+            {`${city.name}, ${city.country}`}
+          </li>
+        ))}
+      </ol>
+    </div>
+  )
+}
+
 }
 
 export default App;
