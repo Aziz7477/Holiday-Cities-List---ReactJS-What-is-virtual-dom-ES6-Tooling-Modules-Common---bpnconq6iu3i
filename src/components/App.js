@@ -34,17 +34,24 @@ class App extends Component {
     { name: 'Mussoorie', country: 'India' },
     { name: 'Mount Abu', country: 'India' },
     { name: 'Tirupati', country: 'India' },
-    ]
+    ];
   }
 
   render() {
+    const orderedCityList = this.cityList.sort((a, b) => (a.name > b.name) ? 1 : -1);
+
     return (
       <div id="main">
-        {/* Do not remove the main div */}
+        <ol>
+          {orderedCityList.map((city, index) => (
+            <li key={`location${index}`}>
+              {`${city.name}, ${city.country}`}
+            </li>
+          ))}
+        </ol>
       </div>
     )
   }
 }
-
 
 export default App;
